@@ -1,0 +1,2 @@
+"Site","Tenant","Rack","Device Name","Manufacturer","Device Type","Height","Serial Number","Asset Tag","Role"
+{% for device in queryset %}"{{ device.site }}","{{ device.tenant }}","{{ device.rack }}","{{ device.name }}","{{ device.device_type.manufacturer }}","{{ device.device_type }}","{{ device.device_type.u_height }}","{{ device.serial }}","{{ device.asset_tag }}","{{device.device_role}}"{% endfor %}
