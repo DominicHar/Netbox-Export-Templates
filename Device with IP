@@ -1,0 +1,4 @@
+name,tenant,device_type,serial,site,address
+{% for device in queryset %}
+{{ device.name }},{{ device.tenant }},{{ device.device_type}}, {{ device.serial }},{{ device.site }},{{ device.primary_ip }}
+{% endfor %}
