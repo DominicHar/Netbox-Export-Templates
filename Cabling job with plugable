@@ -1,0 +1,16 @@
+ID,length,type,device_a,rack_a,position_a,interface_a,pluggable_a,device_b,rack_b,position_b,interface_b,pluggable_b
+	{% for cable in queryset -%}
+	{{- cable.id}},
+	{{- cable.length }}{{ cable.length_unit -}},
+	{{- cable.type -}},
+	{%- if cable.termination_a.device %}{{ cable.termination_a.device.name }}{% else %}Undefined{% endif -%},
+	{%- if cable.termination_a.device %}{{ cable.termination_a.device.rack -}},
+	{{- cable.termination_a.device.position }}{% else %}Undefined{% endif -%},
+	{{- cable.termination_a | default("Not assigned") }},
+	{{- cable.termination_a.cf.plugable | default("Not assigned") }},
+	{%- if cable.termination_b.device %}{{ cable.termination_b.device.name }}{% else %}Undefined{% endif -%},
+	{%- if cable.termination_b.device %}{{ cable.termination_b.device.rack -}},
+	{{- cable.termination_b.device.position }}{% else %}Undefined{% endif -%},
+	{{- cable.termination_b | default("Not assigned") }},
+	{{- cable.termination_b.cf.plugable | default("Not assigned") }},
+	{% endfor %}
