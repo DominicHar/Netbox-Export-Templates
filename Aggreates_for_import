@@ -1,0 +1,4 @@
+prefix,rir
+{% for agg in queryset -%}
+{{- agg.prefix}},{{- agg.rir}}
+{% endfor %}
