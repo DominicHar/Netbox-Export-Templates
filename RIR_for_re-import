@@ -1,4 +1,4 @@
 name,slug,is_private,description
-{% for device in queryset %}
-{{ RIR.name }},{{ RIR.slug}},{{ RIR.is_private}}, {{ RIR.description}}
+{% for RIR in queryset %}
+{{ RIR.name }},{{ RIR.slug}},{{ RIR.is_private}},{{ RIR.description}}
 {% endfor %}
